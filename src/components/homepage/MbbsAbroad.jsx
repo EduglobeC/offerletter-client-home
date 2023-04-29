@@ -1,10 +1,10 @@
 //images and icon
-import slider1 from "../../assets/images/slider-image1.png";
-import slider2 from "../../assets/images/slider-image2.png";
-import slider3 from "../../assets/images/slider-image3.png";
+import slider1 from '../../assets/images/slider-image1.png';
+import slider2 from '../../assets/images/slider-image2.png';
+import slider3 from '../../assets/images/slider-image3.png';
 
 // from react
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const MbbsAbroad = () => {
   const [images, setImages] = useState([slider1, slider2, slider3]);
@@ -72,11 +72,17 @@ const MbbsAbroad = () => {
           Study MBBS Abroad
         </h2>
         <p className="my-8 leading-7 text-center lg:text-left lg:text-xl">
-          Can we take this offline we need to think big start small and scale
-          fast to energize our clients or the last person we talked to said this
-          would be ready nor get buy-in. Wiggle room ensure to follow
-          requirements when developing solutions or high touch client so
-          individual get six alpha pups in here for a focus group.
+          Looking for a thrilling and rewarding career in the field of medicine?
+          Studying MBBS abroad in countries like Russia, Kyrgyzstan, Kazakhstan,
+          Philippines, or Bangladesh is a great opportunity to gain a
+          world-class education in medicine and surgery. In Russia, you'll get
+          to study in state-of-the-art facilities while immersing yourself in
+          the country's rich culture. Kyrgyzstan, Kazakhstan, and Philippines
+          offer affordable tuition fees and a chance to experience diverse and
+          friendly communities. Bangladesh has top-ranked medical universities
+          and a strong emphasis on research and innovation. With Offer Letter's
+          guidance and support, you can make your dream of becoming a doctor a
+          reality and make a significant impact on people's lives.
         </p>
         <a
           href="#learn-more"

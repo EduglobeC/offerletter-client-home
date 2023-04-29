@@ -1,9 +1,9 @@
 // images and icons
-import image1 from "../../assets/images/blue-cardImage1.png";
-import image2 from "../../assets/images/blue-cardImage2.png";
-import image3 from "../../assets/images/blue-cardImage3.png";
-import dashedLine from "../../assets/images/dashed-line.png";
-import TextCard from "./TextCard";
+import image1 from '../../assets/images/blue-cardImage1.png';
+import image2 from '../../assets/images/blue-cardImage2.png';
+import image3 from '../../assets/images/blue-cardImage3.png';
+import dashedLine from '../../assets/images/dashed-line.png';
+import TextCard from './TextCard';
 
 const StudyAbroad = () => {
   return (
@@ -13,11 +13,16 @@ const StudyAbroad = () => {
           Study Abroad
         </h2>
         <p className="my-8 leading-7 text-center lg:text-left lg:text-xl">
-          Can we take this offline we need to think big start small and scale
-          fast to energize our clients or the last person we talked to said this
-          would be ready nor get buy-in. Wiggle room ensure to follow
-          requirements when developing solutions or high touch client so
-          individual get six alpha pups in here for a focus group.
+          Are you ready for an incredible adventure? Imagine studying in a
+          different country, making new friends, and experiencing new cultures
+          firsthand! Studying abroad is an amazing opportunity to learn about
+          new cultures, meet new friends, and improve your language skills.
+          Canada, Australia, USA, and UK are all excellent destinations for
+          students looking to excel in their studies and embark on an adventure
+          of a lifetime. With Offer Letter by your side, you'll have access to a
+          wide range of educational opportunities and resources to help you
+          achieve your goals. Get ready to discover new passions, make lifelong
+          connections, and take your first step towards a bright future!
         </p>
         <a
           href="#learn-more"

@@ -1,4 +1,4 @@
-import image5 from "../../assets/images/image5.png";
+import image5 from '../../assets/images/image5.png';
 const MbbsIndia = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center gap-20 lg:justify-between px-4 md:px-8 lg:px-16 py-20 md:py-40">
@@ -12,11 +12,15 @@ const MbbsIndia = () => {
           Study MBBS in India
         </h2>
         <p className="my-8 leading-7 text-center lg:text-left lg:text-xl">
-          Can we take this offline we need to think big start small and scale
-          fast to energize our clients or the last person we talked to said this
-          would be ready nor get buy-in. Wiggle room ensure to follow
-          requirements when developing solutions or high touch client so
-          individual get six alpha pups in here for a focus group.
+          Did you know that India is home to some of the most prestigious
+          medical colleges in the world? By studying MBBS in India, you can gain
+          a competitive edge in your career while experiencing a rich and
+          diverse culture. With a vast range of specializations to choose from
+          and endless opportunities for hands-on experience, the sky's the limit
+          for your future in medicine. With hard work and dedication, you can
+          make your dreams of studying MBBS in India a reality and make a
+          difference in the world of medicine. Get ready for an unforgettable
+          adventure of learning and growth!.
         </p>
         <a
           href="#learn-more"
