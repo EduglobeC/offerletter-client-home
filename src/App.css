@@ -38,6 +38,14 @@ a {
   display: block;
 }
 
+.hover__child-two {
+  display: none;
+}
+
+.hover__parent-two:hover .hover__child-two {
+  display: block;
+}
+
 .round__bl__tr {
   border-radius: 0px 20px;
 }
