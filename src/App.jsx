@@ -10,7 +10,8 @@ import Signup from './pages/signup/Signup';
 import Services from './pages/services/Services';
 import Schools from './pages/schools/Schools';
 import ResetPassword from './pages/signup/ResetPassword';
-import Canada from './pages/schools/canada';
+import Canada from './pages/schools/Canada';
+import Australia from './pages/schools/Australia';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         {/* Schools */}
         <Route path="/canada" element={<Canada />} />
         <Route path="/uk" element={<Schools country="uk" />} />
-        <Route path="/australia" element={<Schools country="australia" />} />
+        <Route path="/australia" element={<Australia />} />
       </Routes>
     </div>
   );
