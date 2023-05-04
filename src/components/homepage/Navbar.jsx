@@ -1,6 +1,6 @@
 // images and icons
 import message from "../../assets/icons/logo.svg";
-import { FaCaretDown } from "react-icons/fa";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // from react
@@ -9,9 +9,14 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [abroadDropDown, setAbroadDropdown] = useState(false);
+  const [mbbsAbroadDropDown, setMbbsAbroadDropdown] = useState(false);
 
-  const handleSchools = () => {
+  const handleAbroad = () => {
     setAbroadDropdown(!abroadDropDown);
+  };
+
+  const handleMbbsAbroad = () => {
+    setMbbsAbroadDropdown(!mbbsAbroadDropDown);
   };
 
   function handleBurger() {
@@ -43,12 +48,12 @@ const Navbar = () => {
           <Link to="#">Webinars</Link>
         </li>
         <li className="relative flex items-center gap-4 cursor-pointer hover__parent">
-          <Link to="/services">Services</Link>
+          Services
           <span className="fa-caret">
             <FaCaretDown />
           </span>
           <ul className="hover__child absolute top-7 bg-[#143f80] py-4 min-w-max z-30">
-            <li className="py-4 px-8 hover:bg-[#0D2C58] relative flex items-center gap-4 cursor-pointer hover__parent-two">
+            <li className="py-4 px-8 hover:bg-[#0D2C58] relative flex items-center gap-4 justify-between cursor-pointer hover__parent-two">
               Study Abroad
               <span className="fa-caret">
                 <FaCaretDown />
@@ -92,8 +97,54 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
-            <li className="py-4 px-8 block hover:bg-[#0D2C58]">
+            <li className="py-4 px-8 hover:bg-[#0D2C58] relative flex items-center gap-4 justify-between cursor-pointer hover__parent-two">
               MBBS in Abroad
+              <span className="fa-caret">
+                <FaCaretDown />
+              </span>
+              <ul className="hover__child-two absolute top-7 bg-[#143f80] py-4 min-w-max z-30 left-full">
+                <li>
+                  <Link
+                    to="/canada"
+                    className="py-4 px-8 block hover:bg-[#0D2C58]"
+                  >
+                    Study in Russia
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/australia"
+                    className="py-4 px-8 block hover:bg-[#0D2C58]"
+                  >
+                    Study in Kyrgyzstan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/uk" className="py-4 px-8 block hover:bg-[#0D2C58]">
+                    Study in Kazakhstan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="py-4 px-8 block hover:bg-[#0D2C58]">
+                    Study in Uzbekistan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="py-4 px-8 block hover:bg-[#0D2C58]">
+                    Study in Bangladesh
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="py-4 px-8 block hover:bg-[#0D2C58]">
+                    Study in Philippines
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="py-4 px-8 block hover:bg-[#0D2C58]">
+                    Study in Georgia
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="py-4 px-8 block hover:bg-[#0D2C58]">
               Study in India
@@ -130,26 +181,17 @@ const Navbar = () => {
             Webinars
           </Link>
         </li>
-        <li>
-          <Link
-            to="/services"
-            className="block px-8 py-4"
-            onClick={handleHideMenu}
-          >
-            Services
-          </Link>
-        </li>
         <li className="overflow-hidden">
           <button
             className={`w-full flex items-center justify-between px-8 py-4 ${
               abroadDropDown && "bg-[#0D2C58]"
             }`}
             type="button"
-            onClick={handleSchools}
+            onClick={handleAbroad}
           >
             Study Abroad
             <span className="fa-caret">
-              <FaCaretDown />
+              {abroadDropDown ? <FaCaretUp /> : <FaCaretDown />}
             </span>
           </button>
           <ul className={`${!abroadDropDown && "h-0"}`}>
@@ -189,6 +231,65 @@ const Navbar = () => {
             <li>
               <Link className="block px-8 py-4" to="#" onClick={handleBurger}>
                 Study in Europe
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li className="overflow-hidden">
+          <button
+            className={`w-full flex items-center justify-between px-8 py-4 ${
+              mbbsAbroadDropDown && "bg-[#0D2C58]"
+            }`}
+            type="button"
+            onClick={handleMbbsAbroad}
+          >
+            MBBS in Abroad
+            <span className="fa-caret">
+              {mbbsAbroadDropDown ? <FaCaretUp /> : <FaCaretDown />}
+            </span>
+          </button>
+          <ul className={`${!mbbsAbroadDropDown && "h-0"}`}>
+            <li>
+              <Link
+                className="block px-8 py-4"
+                to="/canada"
+                onClick={handleBurger}
+              >
+                Study in Russia
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="block px-8 py-4"
+                to="/australia"
+                onClick={handleBurger}
+              >
+                Study in Kyrgyzstan
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-8 py-4" to="/uk" onClick={handleBurger}>
+                Study in Kazakhstan
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-8 py-4" to="#" onClick={handleBurger}>
+                Study in Uzbekistan
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-8 py-4" to="#" onClick={handleBurger}>
+                Study in Bangladesh
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-8 py-4" to="#" onClick={handleBurger}>
+                Study in Philippines
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-8 py-4" to="#" onClick={handleBurger}>
+                Study in Georgia
               </Link>
             </li>
           </ul>
