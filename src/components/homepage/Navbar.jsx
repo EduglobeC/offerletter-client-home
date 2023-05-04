@@ -294,7 +294,16 @@ const Navbar = () => {
             </li>
           </ul>
         </li>
-
+        <li>
+          <Link to="#" className="block px-8 py-4" onClick={handleHideMenu}>
+            Study in India
+          </Link>
+        </li>
+        <li>
+          <Link to="#" className="block px-8 py-4" onClick={handleHideMenu}>
+            MBBS in India
+          </Link>
+        </li>
         <li>
           <Link to="#" className="block px-8 py-4" onClick={handleBurger}>
             Profile Evaluation
