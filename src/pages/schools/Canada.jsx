@@ -658,11 +658,52 @@ const Canada = () => {
               some of the ways our consultancy – Offer Letter can assist you:
             </p>
             {/* it's content */}
-            <ol class="list-decimal list-outside text-lg">
-              <li class="mb-2 text-red-500 text-4xl">Item 1</li>
-              <li class="mb-2 text-red-500 text-4xl">Item 2</li>
-              <li class="mb-2 text-red-500 text-4xl">Item 3</li>
+            <ol class="list-decimal list-outside">
+              <li class="mb-2 list-decimal">
+                Expert Guidance <br /> Our team of experienced education
+                consultants can provide you with expert guidance and support
+                throughout your journey to study in Australia. We can help you
+                choose the right course and institution for your needs and
+                provide advice on the application process and visa requirements.
+              </li>
+              <li class="mb-2 list-decimal">
+                Application Assistance <br />
+                Applying to study in Australia can be a complex and
+                time-consuming process, especially for international students.
+                Offer Letter can help you navigate the application process and
+                ensure that all the necessary documentation is submitted on time
+                and to the highest standard.
+              </li>
+              <li class="mb-2 list-decimal">
+                Scholarship Opportunities <br /> There are many scholarship
+                opportunities available for international students who wish to
+                study in Australia. Offer Letter can help you identify and apply
+                for scholarships that are suitable for your needs and provide
+                guidance on the application process and eligibility criteria.
+              </li>
+              <li class="mb-2 list-decimal">
+                Ongoing Support <br /> Studying in a new country can be a
+                challenging experience, and Offer Letter is committed to
+                providing ongoing support to ensure that you have the best
+                possible experience. We can provide advice on accommodation,
+                transport, and other practical matters, as well as connect you
+                with other students and support networks.
+              </li>
             </ol>
+            <p className="my-6">
+              In conclusion, studying in Australia offers a wealth of
+              opportunities for international students, from high-quality
+              education to a welcoming and inclusive culture. Offer Letter can
+              help you navigate the application process and find the best
+              college or university for your needs, providing expert guidance
+              and ongoing support throughout your journey to study in Australia.
+            </p>
+            <p>
+              Feel free to learn more by{' '}
+              <span className="text-blue-500">Booking a Demo </span> with our
+              fabulous team which is dedicated to support in crafting your
+              educational career.
+            </p>
           </div>
         </div>
       </main>
