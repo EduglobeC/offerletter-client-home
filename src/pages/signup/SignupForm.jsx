@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { usePostRegisterMutation } from "../../redux/features/auth/authApiSlice";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
+import InputPassword from "./InputPassword";
 
 function SignupForm({ setErrors }) {
   const domain = import.meta.env.VITE_HOME_DOMAIN;
@@ -52,23 +53,15 @@ function SignupForm({ setErrors }) {
         onChange={(e) => setEmail(e.target.value)}
         className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
       />
-      <input
-        type="password"
-        required
-        name="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
+      <InputPassword
+        setPassword={setPassword}
+        password={password}
+        placeholder={"Password"}
       />
-      <input
-        type="password"
-        required
-        name="password"
-        placeholder="Retype Password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
+      <InputPassword
+        setConfirmPassword={setConfirmPassword}
+        confirmPassword={confirmPassword}
+        placeholder={"Confirm Password"}
       />
 
       <div className="flex items-center gap-4">
