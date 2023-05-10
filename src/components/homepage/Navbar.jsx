@@ -6,11 +6,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 // from react
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import jwtDecode from "jwt-decode";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [abroadDropDown, setAbroadDropdown] = useState(false);
   const [mbbsAbroadDropDown, setMbbsAbroadDropdown] = useState(false);
 
+  const userToken = Cookies.get("userToken");
+  const studentToken = Cookies.get("studentToken");
+  const token = userToken || studentToken;
+
+  const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
+
+  console.log(isExpired);
   const handleAbroad = () => {
     setAbroadDropdown(!abroadDropDown);
   };
@@ -25,6 +34,11 @@ const Navbar = () => {
 
   function handleHideMenu() {
     setShowMenu(false);
+  }
+
+  function handleLogout() {
+    Cookies.remove("userToken");
+    Cookies.remove("studentToken");
   }
 
   return (
@@ -159,9 +173,22 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hidden xl:block">
-        <Link to="/login" className="px-8 py-3 border border-white rounded-lg">
-          Log in
-        </Link>
+        {isExpired ? (
+          <Link
+            to="/login"
+            className="px-8 py-3 border border-white rounded-lg"
+          >
+            Log in
+          </Link>
+        ) : (
+          <button
+            className="px-8 py-3 border border-white rounded-lg"
+            type="button"
+            onClick={handleLogout}
+          >
+            Log out
+          </button>
+        )}
       </div>
 
       <button
@@ -310,9 +337,23 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/login" className="block px-8 py-4" onClick={handleBurger}>
-            Log in
-          </Link>
+          {isExpired ? (
+            <Link
+              to="/login"
+              className="block px-8 py-4"
+              onClick={handleBurger}
+            >
+              Log in
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="block px-8 py-4"
+              onClick={handleLogout}
+            >
+              Log out
+            </button>
+          )}
         </li>
       </ul>
     </div>
