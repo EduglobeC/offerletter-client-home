@@ -173,7 +173,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hidden xl:block">
-        {isExpired ? (
+        {isExpired === undefined ? (
           <Link
             to="/login"
             className="px-8 py-3 border border-white rounded-lg"
