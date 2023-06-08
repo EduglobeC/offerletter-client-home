@@ -18,7 +18,7 @@ const Navbar = () => {
   const studentToken = Cookies.get("studentToken");
   const token = userToken || studentToken;
 
-  const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
+  const isExpired = token ? jwtDecode(token).exp * 1000 < Date.now() : true;
 
   console.log(isExpired);
 
