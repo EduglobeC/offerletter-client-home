@@ -8,14 +8,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
+
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [abroadDropDown, setAbroadDropdown] = useState(false);
   const [mbbsAbroadDropDown, setMbbsAbroadDropdown] = useState(false);
 
-  const userToken = Cookies.get("userToken");
+  const studentInfo = Cookies.get("studentInfo");
   const studentToken = Cookies.get("studentToken");
-  const token = userToken || studentToken;
+  const token = studentInfo || studentToken;
 
   const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
 
@@ -37,8 +38,9 @@ const Navbar = () => {
   }
 
   function handleLogout() {
-    Cookies.remove("userToken");
+    Cookies.remove("studentInfo");
     Cookies.remove("studentToken");
+    window.location.reload();
   }
 
   return (
@@ -173,7 +175,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hidden xl:block">
-        {isExpired === undefined ? (
+        {isExpired == undefined ? (
           <Link
             to="/login"
             className="px-8 py-3 border border-white rounded-lg"
@@ -337,7 +339,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          {isExpired ? (
+          {isExpired == undefined ? (
             <Link
               to="/login"
               className="block px-8 py-4"
