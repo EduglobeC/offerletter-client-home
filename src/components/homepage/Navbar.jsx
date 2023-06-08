@@ -14,9 +14,9 @@ const Navbar = () => {
   const [abroadDropDown, setAbroadDropdown] = useState(false);
   const [mbbsAbroadDropDown, setMbbsAbroadDropdown] = useState(false);
 
-  const studentInfo = Cookies.get("studentInfo");
+  const userToken = Cookies.get("userToken");
   const studentToken = Cookies.get("studentToken");
-  const token = studentInfo || studentToken;
+  const token = userToken || studentToken;
 
   const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
 
@@ -38,7 +38,7 @@ const Navbar = () => {
   }
 
   function handleLogout() {
-    Cookies.remove("studentInfo");
+    Cookies.remove("userToken");
     Cookies.remove("studentToken");
     window.location.reload();
   }
