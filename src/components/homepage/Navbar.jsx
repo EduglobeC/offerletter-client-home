@@ -21,6 +21,7 @@ const Navbar = () => {
   const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
 
   console.log(isExpired);
+
   const handleAbroad = () => {
     setAbroadDropdown(!abroadDropDown);
   };
@@ -175,7 +176,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hidden xl:block">
-        {isExpired == undefined ? (
+        {isExpired ? (
           <Link
             to="/login"
             className="px-8 py-3 border border-white rounded-lg"
@@ -339,7 +340,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          {isExpired == undefined ? (
+          {isExpired ? (
             <Link
               to="/login"
               className="block px-8 py-4"
