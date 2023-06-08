@@ -22,11 +22,6 @@ const ResetPassword = () => {
     postUpdatePassword(data)
       .unwrap()
       .then((res) => {
-        const userInfo = jwtDecode(res.token);
-        Cookies.set("userInfo", JSON.stringify(userInfo), {
-          domain: `${domain}`,
-        });
-        Cookies.set("userToken", res.token, { domain: `${domain}` });
         navigate("/login");
         console.log(res);
       })

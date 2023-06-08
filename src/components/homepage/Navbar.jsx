@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
 const Navbar = () => {
+  const domain = import.meta.env.VITE_HOME_DOMAIN;
+
   const [showMenu, setShowMenu] = useState(false);
   const [abroadDropDown, setAbroadDropdown] = useState(false);
   const [mbbsAbroadDropDown, setMbbsAbroadDropdown] = useState(false);
@@ -17,9 +19,8 @@ const Navbar = () => {
   const studentToken = Cookies.get("studentToken");
   const token = userToken || studentToken;
 
-  const isExpired = token && jwtDecode(token).exp * 1000 < Date.now();
+  const isExpired = token ? jwtDecode(token).exp * 1000 < Date.now() : true;
 
-  console.log(isExpired);
   const handleAbroad = () => {
     setAbroadDropdown(!abroadDropDown);
   };
@@ -37,8 +38,13 @@ const Navbar = () => {
   }
 
   function handleLogout() {
-    Cookies.remove("userToken");
-    Cookies.remove("studentToken");
+    Cookies.remove("userToken", {
+      domain: `${domain}`,
+    });
+    Cookies.remove("studentToken", {
+      domain: `${domain}`,
+    });
+    window.location.reload();
   }
 
   return (
