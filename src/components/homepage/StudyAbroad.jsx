@@ -1,15 +1,15 @@
 // images and icons
-import image1 from '../../assets/images/blue-cardImage1.png';
-import image2 from '../../assets/images/blue-cardImage2.png';
-import image3 from '../../assets/images/blue-cardImage3.png';
-import dashedLine from '../../assets/images/dashed-line.png';
-import TextCard from './TextCard';
+import image1 from "../../assets/images/blue-cardImage1.png";
+import image2 from "../../assets/images/blue-cardImage2.png";
+import image3 from "../../assets/images/blue-cardImage3.png";
+import dashedLine from "../../assets/images/dashed-line.png";
+import TextCard from "./TextCard";
 
 const StudyAbroad = () => {
   return (
-    <article className="min-h-[1300px] md:min-h-[1100px] lg:min-h-[700px] flex flex-col gap-y-10 lg:flex-row lg:justify-between text-white bg-[url(/src/assets/images/blue-card.png)] bg-cover bg-no-repeat relative top-[-8rem] lg:top-[-4.5rem] py-48 md:py-40 px-4 md:px-8 lg:px-16">
+    <article className="min-h-[1300px] md:min-h-[1100px] lg:min-h-[700px] flex flex-col gap-y-10 lg:flex-row lg:justify-between text-white bg-[url(/src/assets/images/blue-card.png)] bg-cover bg-no-repeat relative top-[-8rem] lg:top-[-5rem] py-48 md:py-40 px-4 md:px-8 lg:px-16">
       <div className="lg:w-[45%] flex flex-col items-center lg:items-start">
-        <h2 className="mb-4 text-center lg:text-left font-semibold text-4xl lg:text-5xl">
+        <h2 className="mb-4 text-4xl font-semibold text-center lg:text-left lg:text-5xl">
           Study Abroad
         </h2>
         <p className="my-8 leading-7 text-center lg:text-left lg:text-xl">
@@ -26,7 +26,7 @@ const StudyAbroad = () => {
         </p>
         <a
           href="#learn-more"
-          className="bg-white text-black text-lg md:text-2xl block px-16 py-4 rounded-lg"
+          className="block px-16 py-4 text-lg text-black bg-white rounded-lg md:text-2xl"
         >
           Learn More
         </a>

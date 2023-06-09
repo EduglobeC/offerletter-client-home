@@ -175,7 +175,9 @@ const Navbar = () => {
           </ul>
         </li>
         <li>
-          <Link to="#">Profile Evaluation</Link>
+          <Link to={`http://student${domain}/universities`}>
+            Profile Evaluation
+          </Link>
         </li>
       </ul>
       <div className="hidden xl:block">
@@ -338,7 +340,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="#" className="block px-8 py-4" onClick={handleBurger}>
+          <Link
+            to={`{http://student${domain}/universities`}
+            className="block px-8 py-4"
+            onClick={handleBurger}
+          >
             Profile Evaluation
           </Link>
         </li>
